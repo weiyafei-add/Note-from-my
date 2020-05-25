@@ -50,18 +50,18 @@ console.log('done')
 现在, 我们来看一下JavaScript引擎是如何管理执行上下文的
 
 1. 首先, JavaScript引擎遇到这段代码(假如这是一段完整的js代码), 引擎会先创建一个全局上下文并压入执行栈中(一直会是这样)
-2. <img src="C:\Users\weiyafei\Pictures\Saved Pictures\流程1.png" style="zoom:50%;" />
+2. <img src="C:\Users\weiyafei\Documents\MyNote\Saved Pictures\流程1.png" style="zoom:50%;" />
 3. 引擎遇到`first()`这行代码, 意味着要执行该函数, JavaScript引擎会为该函数创建一个新的执行上下文并把它压入当前执行栈的顶部
-4. <img src="C:\Users\weiyafei\Pictures\Saved Pictures\流程2.png" style="zoom:50%;" />
+4. <img src="C:\Users\weiyafei\Documents\MyNote\Saved Pictures\流程2.png" style="zoom:50%;" />
 5. 此时控制台会打印 `hello, my name is first` , 然后引擎遇到了`second()`函数调用
 6. JavaScript引擎为`second()`函数创建一个新的执行上下文并把它压入当前执行栈的顶部, 此时`first()`函数执行上下文依然在执行栈中, `second`函数开始执行, 此时控制台打印出: `my name is second`
-7. <img src="C:\Users\weiyafei\Pictures\Saved Pictures\流程3.png" style="zoom:50%;" />
+7. <img src="C:\Users\weiyafei\Documents\MyNote\Saved Pictures\流程3.png" style="zoom:50%;" />
 8. `second`函数执行完毕, 它的执行上下文会从当前调用栈弹出, 并且控制流程会到达下一个执行上下文,  即`first()`函数的执行上下文
-9. <img src="C:\Users\weiyafei\Pictures\Saved Pictures\流程4.png" style="zoom:50%;" />
+9. <img src="C:\Users\weiyafei\Documents\MyNote\Saved Pictures\流程4.png" style="zoom:50%;" />
 10. 当first执行完毕后, 它的执行上下文会从栈中弹出, 控制流程到达最底部的全局执行上下文, 一旦所有代码都指向完毕, JavaScript引擎会从当前栈中弹出全局指向上下文
 11. 
 
-<img src="C:\Users\weiyafei\Pictures\Saved Pictures\流程1.png" style="zoom:50%;" />
+<img src="C:\Users\weiyafei\Documents\MyNote\Saved Pictures\流程1.png" style="zoom:50%;" />
 
 > 这样一来,我们就很直观的能理解JavaScript是怎样管理上下文的
 
@@ -262,7 +262,7 @@ FunctionExectionContext = {
 
 **注意** => 在执行阶段, 如果JavaScript引擎不能再源码中声明的实际位置找到`let`变量的值, 它会被赋值为`undefined`
 
-<img src="C:\Users\weiyafei\Pictures\Saved Pictures\创建执行上下文.png" style="zoom:100%;" />
+<img src="C:\Users\weiyafei\Documents\MyNote\Saved Pictures\创建执行上下文.png" style="zoom:80%;" />
 
 
 
